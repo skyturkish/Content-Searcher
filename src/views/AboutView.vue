@@ -1,17 +1,21 @@
-<template>
-  <p v-for="user in users" :key="user.id">
-    {{user.name}}
-  </p>
+<script>
+
+</script>
+
+
+<template lang="pug">
+.about
 </template>
 
-<script>
-import userData from '../assets/users.json'
 
-export default {
-  data() {
-    return {
-      users: userData,
-    };
-  },
-};
-</script>
+<style > 
+.about {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: aliceblue;
+  font-family: sans-serif;
+}
+</style>

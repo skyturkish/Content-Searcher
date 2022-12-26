@@ -1,10 +1,10 @@
 <script setup>
-import Search from "./views/SearchView.vue";
+import SearchView from "./views/SearchView.vue";
 </script>
 
 <template lang="pug">
-
-Search
+  
+SearchView
 
 </template>
 

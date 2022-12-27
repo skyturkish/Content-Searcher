@@ -1,13 +1,13 @@
 <script setup >
 import { ref } from 'vue'
 
+
 import VideoData from '../assets/videos.json'
 
-const videos =  VideoData['videos']
 
-const input = ref('');
+const videos =  VideoData.videos
 
-const isValid = ref( input.value.length > 2 )
+const input = ref('')
 
 function startWith(timeStamp) {
   const time = timeStamp.time.split(':')
@@ -20,7 +20,6 @@ function startWith(timeStamp) {
   
   return '&t=' + startSecond + 's'
 }
-
 
 </script>
 
@@ -35,10 +34,10 @@ function startWith(timeStamp) {
   p.timeStamps(v-for='video in videos' :key='video.url')
     p(v-for='timeStamp in video.timeStamps.filter((timeStamp) => timeStamp.text.toLowerCase().includes(input.toLowerCase()))' :key='video.url')
       .link
-      a(:href='video.url + startWith(timeStamp)' target='_blank') {{timeStamp.text}}
+      a(:href='video.url + startWith(timeStamp)' target='_blank') {{ timeStamp.text }} {{ video.createdAt  }} 
   </div>
   <div v-else>
-  Now find what are you looking for 
+   h1 Search what are you looking for in videos... 
   </div>
 </template>
   
@@ -55,10 +54,6 @@ function startWith(timeStamp) {
   height: 30px;
   border-radius: 15px;
   padding-left: 20px;
-
-}
-.timeStamps {
-  width: max-content;
 }
 .link{
   width:max-content;
